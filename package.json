@@ -1,6 +1,6 @@
 {
   "name": "@samv749/crsl",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "dist/crsl.cjs.js",
   "module": "dist/crsl.esm.js",

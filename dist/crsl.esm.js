@@ -1,4 +1,4 @@
-/*! @samv749/crsl v1.0.3 | MIT */
+/*! @samv749/crsl v1.0.4 | MIT */
 /**
  * @class Crsl
  * @description A lightweight, customizable, extendable, responsive image slider in vanilla JS

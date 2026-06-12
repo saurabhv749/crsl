@@ -1,4 +1,4 @@
-/*! @samv749/crsl v1.0.3 | MIT */
+/*! @samv749/crsl v1.0.4 | MIT */
 var Crsl = (function () {
     'use strict';
 
