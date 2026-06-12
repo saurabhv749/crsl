@@ -1,0 +1,31 @@
+name: Build & Publish
+
+on:
+  push:
+    tags: ['v*']          # trigger only on version tags
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # needed to push docs to gh-pages
+      id-token: write     # needed for npm provenance
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+
+      - run: npm ci
+
+      # Build dist + generate docs
+      - run: npm run release
+
+      # Publish to npm (NPM_TOKEN secret required)
+      - run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

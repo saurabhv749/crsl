@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crsl | Demo</title>
+    <meta name="description" content="A lightweight, customizable, extendable, responsive image slider in vanilla JS">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/saurabhv749/crsl@main/dist/crsl.min.css">
+</head>
+
+<body>
+    <div class="slider__container">
+        <div class="crsl">
+            <div class="crsl__items">
+                <div class="crsl__item item" id="slide-1">
+                    <img src="./images/flowers (1).jpg" alt="demo image" class="item__bg">
+                </div>
+                <div class="crsl__item item" id="slide-2">
+                    <img src="./images/flowers (2).jpg" alt="demo image" class="item__bg">
+                </div>
+                <div class="crsl__item item" id="slide-3">
+                    <img src="./images/flowers (3).jpg" alt="demo image" class="item__bg">
+                </div>
+                <div class="crsl__item item" id="slide-4">
+                    <img src="./images/flowers (4).jpg" alt="demo image" class="item__bg">
+                </div>
+                <div class="crsl__item item" id="slide-5">
+                    <img src="./images/flowers (5).jpg" alt="demo image" class="item__bg">
+                </div>
+                <div class="crsl__item item" id="slide-6">
+                    <img src="./images/flowers (6).jpg" alt="demo image" class="item__bg">
+                </div>
+                <div class="crsl__item item" id="slide-7">
+                    <img src="./images/flowers (7).jpg" alt="demo image" class="item__bg">
+                </div>
+                <div class="crsl__item item" id="slide-8">
+                    <img src="./images/flowers (8).jpg" alt="demo image" class="item__bg">
+                </div>
+            </div>
+            <!-- dot controls -->
+            <div class="crsl__controls hide">
+                <a class="crsl__prev" aria-role="navigation"></a>
+                <a class="crsl__next" aria-role="navigation"></a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/saurabhv749/crsl@main/dist/crsl.iife.min.js"></script>
+    <script>
+        new Crsl(".crsl", {
+            enableDots: true,
+            duration: 600,
+            autoPlay: true,
+            interval: 2300
+        });
+    </script>
+    <!-- custom styles  -->
+    <style>
+        .slider__container {
+            width: 400px;
+            height: 300px;
+        }
+
+        @media (min-width: 600px) {
+            .slider__container {
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .slider__container {
+                height: 50vh;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .slider__container {
+                height: 100vh;
+            }
+        }
+
+        .item {
+            position: relative;
+        }
+
+        .item__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</body>
+
+</html>

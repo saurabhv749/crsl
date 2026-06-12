@@ -1,0 +1,31 @@
+{
+  "name": "@samv749/crsl",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/crsl.cjs.js",
+  "module": "dist/crsl.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/crsl.esm.js",
+      "require": "./dist/crsl.cjs.js",
+      "default": "./dist/crsl.esm.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "docs": "jsdoc2md src/crsl.js > API.md",
+    "predeploy": "npm run build && npm run docs",
+    "release": "npm run predeploy"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15",
+    "@rollup/plugin-terser": "^0.4",
+    "jsdoc-to-markdown": "^9.1.3",
+    "rollup": "^4",
+    "rollup-plugin-scss": "^4.0.1",
+    "sass": "^1.100.0"
+  }
+}
